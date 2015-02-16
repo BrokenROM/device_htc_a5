@@ -35,14 +35,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
-# Recovery
-PRODUCT_PACKAGES += \
-    lpm.rc \
-    choice_fn \
-    offmode_charging \
-    offmode_charging_res_images \
-    offmode_charging_warn_res_images
-
 # Qcom init scripts for /etc
 PRODUCT_PACKAGES += \
    init.qcom.bt.bluedroid.sh \
@@ -84,10 +76,8 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
+    libqcomvoiceprocessing \
     tinymix
-
-PRODUCT_PACKAGES += \
-    libaudioamp
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -198,10 +188,6 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
 
 # USB
 PRODUCT_PACKAGES += \
