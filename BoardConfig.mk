@@ -60,6 +60,7 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
+AUDIO_FEATURE_ENABLED_FM := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -77,10 +78,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
-# Fm
-QCOM_FM_ENABLED := true
-AUDIO_FEATURE_ENABLED_FM := true
-
 # Graphics
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -96,7 +93,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
 COMMON_GLOBAL_CFLAGS += -DHTCLOG -DMOTOROLA_LOG
-TARGET_USES_LOGD := false
 
 # NFC
 BOARD_NFC_CHIPSET := pn547
@@ -128,7 +124,6 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 285212672
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
@@ -160,7 +155,6 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     file.te \
     init.te \
-    kcal_dev.te \
     kernel.te \
     mediaserver.te \
     mm-qcamerad.te \
@@ -169,7 +163,6 @@ BOARD_SEPOLICY_UNION += \
     property_contexts \
     recovery.te \
     rmt_storage.te \
-    system_app.te \
     system_server.te \
     thermal-engine.te \
     ueventd.te \
